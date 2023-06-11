@@ -1,0 +1,224 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+html{
+    background-color: #020659;
+}
+body{
+    margin: auto;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    width:75%;
+}
+header{
+    margin: 30px;
+}
+h1 {
+    font-size:1.25em;
+    color:#ffffff;
+}
+h2, h3 {
+    font-size: 1em;
+}
+p, dl, dd {
+    font-size: 1em;
+}
+footer p {
+    font-size: .75em;
+}
+li{
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+}
+ul {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+}
+label {
+    cursor: pointer;
+    display: inline-block;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+}
+label span {
+    background-color: #ffffff;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background-color .2s ease-out;
+    width: 18px;
+}
+label span:before, label span:after {
+    background: #ffffff;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+label span:before {
+    top: 5px;
+}
+label span:after {
+    top: -5px;
+}
+input {
+    display: none;
+}
+input:checked ~ ul {
+    max-height: 500px;
+}
+input:checked ~ label span {
+    background: transparent;
+}
+input:checked ~ label span:before {
+    transform: rotate(-45deg);
+}
+input:checked ~ label span:after {
+    transform: rotate(45deg);
+}
+input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps) span:after {
+    top: 0;
+}
+
+@media screen and (min-width:834px) {
+    ul {
+        overflow: visible;
+        position: absolute;
+        top: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+    label span, input {
+        display: none;
+    }
+}
+audio::-webkit-media-controls-mute-button {
+    background-color:white;
+    border-radius: 50%;
+}
+audio::-webkit-media-controls-play-button {
+    background-color: white;
+    border-radius: 50%;
+}
+audio::-webkit-media-controls-enclosure {
+    background-color: rgba(255,255,255,0.5);
+}
+#trending ::-webkit-scrollbar {
+    width: 10px;
+    overflow:auto;
+}
+#trending ::-webkit-scrollbar-track {
+    background-color: #590242;
+}
+#trending ::-webkit-scrollbar-thumb {
+    background-color: #590242
+}
+#trending ::-webkit-scrollbar-thumb:hover {
+    background-color:#590242;
+}
+#playlists ::-webkit-scrollbar, #curated ::-webkit-scrollbar {
+    width: 10px;
+}
+#playlists ::-webkit-scrollbar-track, #curated ::-webkit-scrollbar-track  {
+    color:#590242
+}
+#playlists ::-webkit-scrollbar-thumb, #curated ::-webkit-scrollbar-thumb {
+    background-color: #590242;
+}
+#playlists ::-webkit-scrollbar-thumb:hover, #curated ::-webkit-scrollbar-thumb:hover {
+    background-color: #590242;
+}
+#trending{
+    background-color: #ffffff;
+    color:black;
+}
+#playlists{
+    background-color: #0D8DF8;
+    float: left;
+}
+#curated{
+    background-color: #020659;
+    float: right;
+}
+footer{
+    margin-top: auto;
+}
+.scroll{
+    display:grid;
+    grid-template-columns: repeat(5, 1fr);
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+.scroll section{
+    margin: 10px;
+    position: relative;
+}
+.scroll div{
+    position: absolute;
+    top: 251px;
+    background-color: rgba(255,255,255,0.75);
+    padding:5px;
+    height: 50px;
+    width: 350px;
+}
+dl{
+    display: flex;
+}
+dt{
+    padding-right: 5px;
+}
+audio{
+    position: absolute;
+    bottom: 150px;
+    left: 5px;
+}
+.scroll button{
+    background-color: #590242;
+    color:white;
+    font-size: 15px;
+    margin: 10px;
+    border-radius: 8px;
+    width: fit-content;
+    float: right;
+}
+#playlists{
+    overflow: scroll;
+    width: 50%;
+    height: 350px;
+}
+#curated{
+    overflow: scroll;
+    width: 50%;
+    height: 350px;
+}
+#playlists h3, #curated h3{
+    background-color: #ffffff;
+    height: 50px;
+    margin-top: 0px;
+    color:#590242
+}
+#playlists img{
+    float: left;
+}
+#playlists dl{
+    float: right;
+    overflow:hidden ;
+}
+#playlists dt{
+    text-align: right;
+}
+#curated img{
+    float:left;
+}
+#curated p{
+    float:right;
+    display: inline;
+}
